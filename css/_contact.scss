@@ -1,0 +1,229 @@
+$bgcolor: black;
+$txtcolor: white;
+$linkcolor: #bbb;
+$hovercolor: #fff;
+
+@mixin s-header-h1($color) {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 15px;
+  margin-bottom: 50px;
+  letter-spacing: 6px;
+  color: $color;
+  margin-bottom: 25px;
+}
+
+section.contact {
+  width: max-content;
+  margin: auto;
+  border-radius: 15%;
+  height: min-content;
+  background-color: $bgcolor;
+  overflow: hidden;
+  padding: 50px;
+  .section-header {
+    @include s-header-h1($txtcolor);
+  }
+  .contact-wrapper {
+    margin: 0 auto;
+    padding-top: 20px;
+    position: relative;
+    max-width: 800px;
+  }
+  .form-group .col-sm-12 {
+    display: inline;
+  }
+  .form-group {
+    margin: 15px 0;
+    div {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  fieldset div:first-child {
+    margin-top: 0;
+  }
+  #date {
+    color: $txtcolor;
+    background: $bgcolor
+      url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+      97% 50% no-repeat;
+  }
+  #date::-webkit-inner-spin-button {
+    display: none;
+  }
+  #date::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  #phone::-webkit-outer-spin-button,
+  #phone::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  #phone {
+    -moz-appearance: textfield;
+  }
+
+  /* Begin Left Contact Page */
+  .form-horizontal {
+    float: left;
+    margin-right: 50px;
+    max-width: 400px;
+    font-family: "Lato";
+    font-weight: 400;
+  }
+
+  .form-control,
+  textarea {
+    max-width: 400px;
+    background-color: $bgcolor;
+    color: $txtcolor;
+    letter-spacing: 1px;
+  }
+
+  .send-button {
+    margin-top: 15px;
+    height: 34px;
+    width: 400px;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .button {
+    width: 400px;
+    height: 34px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .send-text {
+    display: block;
+    margin-top: 10px;
+    font: 700 12px "Lato", sans-serif;
+    letter-spacing: 2px;
+  }
+
+  /* Begin Right Contact Page */
+  .direct-contact-container {
+    max-width: 400px;
+    float: right;
+    margin: 0;
+  }
+  iframe {
+    border: none;
+  }
+
+  /* Location, Phone, Email Section */
+  .contact-list {
+    list-style-type: none;
+    margin-left: -30px;
+    padding-right: 20px;
+  }
+
+  .list-item {
+    line-height: 4;
+    color: $txtcolor;
+  }
+
+  .contact-text {
+    font: 300 18px "Lato", sans-serif;
+    letter-spacing: 1.9px;
+    color: $txtcolor;
+  }
+
+  a {
+    color: $linkcolor;
+    text-decoration: none;
+    transition-duration: 0.2s;
+  }
+
+  a:hover {
+    color: $hovercolor;
+    text-decoration: none;
+  }
+
+  hr {
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+}
+/* Begin Media Queries*/
+@media screen and (max-width: 760px) {
+  #contact {
+    height: 1000px;
+  }
+  .section-header {
+    font-size: 65px;
+  }
+  .direct-contact-container,
+  .form-horizontal {
+    float: none;
+    margin: 10px auto;
+  }
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 300px;
+  }
+  .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+@media screen and (max-width: 569px) {
+  #contact {
+    height: 1200px;
+  }
+  .section-header {
+    font-size: 50px;
+  }
+  .direct-contact-container,
+  .form-wrapper {
+    float: none;
+    margin: 0 auto;
+  }
+  .form-control,
+  textarea {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .name,
+  .email,
+  textarea {
+    width: 280px;
+  }
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 280px;
+  }
+  .social-media-list {
+    left: 0;
+  }
+  .social-media-list li {
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+    font-size: 2rem;
+  }
+  .social-media-list li:after {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .send-button {
+    width: 99%;
+  }
+}

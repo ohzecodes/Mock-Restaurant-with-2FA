@@ -1,0 +1,16 @@
+.git
+**/.svn
+**/.hg
+**/CVS
+**/.DS_Store
+**/._*.sql
+**/._*.html
+**/._.DS_Store
+**/._*.php
+**/._*.scss
+**/._*.png
+**/._*.jpg
+**/._*.svg
+**/._*.json
+connect.php
+.DS_Store 
