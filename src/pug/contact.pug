@@ -1,0 +1,111 @@
+doctype html
+html
+  -const scripts=[{src:"../scripts/contactpage.js"}]
+  -const title={t:"restaurant Erkenci ",desc:"The world largest underwater restuarant. We are renowned amongst our customers to serve the best seafood in the world. "};
+  include inc/head.pug
+  body
+    include inc/header.pug
+    main.top-100
+      section.contact(style='margin-bottom: 50px')
+        h1.section-header CONTACT
+        .contact-wrapper
+          p#progress(style='padding: 20px; text-align: center')
+          form#formcontact.form-horizontal(method='POST' role='form')
+            fieldset
+              .form-group
+                .col-sm-12
+                  input#name.form-control(type='text' placeholder='NAME' name='name' value='')
+              .form-group
+                .col-sm-12
+                  input#email.form-control(type='email' placeholder='EMAIL' name='email' value='')
+              textarea#message.form-control(rows='10' placeholder='MESSAGE' name='message')
+              button#submit.btn.btn-primary.send-button(type='button' onclick='send()' value='SEND')
+                | SEND
+          script.
+            function send() {
+            const obj = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+            };
+            console.log(obj);
+            $.ajax({
+            type: "POST",
+            url: "./auth/contact.php",
+            data: obj,
+            success: function () {
+            document.getElementById("progress").innerHTML = "Successful";
+            document.getElementById("progress").style.backgroundColor =
+            "mintcream";
+            },
+            });
+            }
+          .direct-contact-container
+            iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10602241.118828239!2d-16.258690935773924!3d49.551762564119535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDI2JzI5LjgiTiA3wrAxNycyMS44Ilc!5e0!3m2!1sen!2sca!4v1553362504792' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade' onload="console.log('these errors comes from the map embed')")
+            ul.contact-list
+              li.list-item
+                i.fa.fa-map-marker.fa-2x
+                  span.contact-text.place Water, AVE
+              li.list-item
+                a(href='tel:123-X2D-Y0Q1' title='Give me a call') 123-X2D-Y0Q1
+              li.list-item
+                span.contact-text.gmail
+                  a(href='mailto:contact@ercenci.com' title='Send me an email') contact@ercenci.com
+            hr
+      section#ReserveATable
+        form#msform(action='./auth/reservingatable.php')
+          fieldset
+            .section-header
+              h1 Table Reservation
+            .form-group
+              .col-sm-12
+                label(for='nane') Name
+                input#name.form-control(type='text' placeholder='NAME' name='name' value='')
+            .form-group
+              .col-sm-12
+                label(for='phone') Phone
+                input#phone.form-control(type='number' placeholder='Phone' name='phone' required='')
+            .form-group
+              .col-sm-12
+                label(for='email') Email
+                input#email.form-control(type='email' placeholder='EMAIL' name='email' value='')
+            .form-group
+              .col-sm-12
+                label(for='Date') Date
+                input#date.form-control(type='date' name='date' placeholder='DD/MM/YYYY' required='')
+            button.next.action-button.btn.btn-success(type='button' name='next')
+              | NEXT
+          fieldset
+            .form-group
+              .col-sm-12
+                label(for='number') Numbers of Attendees
+                select#number.form-control(name='select')
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+                  option(value='5') 5
+                  option(value='6') 6
+                  option(value='7') 7
+                  option(value='8') 8
+                  option(value='9') 9
+                  option(value='10') 10
+                  option(value='11') 10+
+            br
+            .form-group
+              .col-sm-12
+                label(for='contactH') How should we contact you
+                select#contactH.form-control(name='select1')
+                  option(value='Email') Email
+                  option(value='Phone') Phone
+                  option(value='other') Other please specify
+            br
+            br
+            div
+              | Comments / Additional Requests
+              br
+              textarea#Comments.form-control(name='Comments' rows='6')
+            input.btn.btn-secondary.previous.action-button(type='button' name='previous' value='Previous')
+            button#submit.btn.btn-success.send-button(type='submit' value='SEND')
+              | Submit
+    include inc/footer.pug

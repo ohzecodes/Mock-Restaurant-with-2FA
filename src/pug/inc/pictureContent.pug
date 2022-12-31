@@ -1,0 +1,12 @@
+mixin pictureContent(item,where)
+  div.about
+    img(src=item.img alt=item.alt)
+    h1= item.h1
+    p= item.p
+      if where=="reach"
+        br
+        a(href='#top') Back to the top   
+//-  div.about
+//-             img(src=item.img alt=item.alt)
+//-             h2(id=item.id)= item.heading
+//-             p= item.p 

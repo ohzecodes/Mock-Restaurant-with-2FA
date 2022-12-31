@@ -1,0 +1,35 @@
+mixin ALinkdiv(id,array)
+  div(id=id)
+    h1=id 
+    ul
+      for e in array 
+        li 
+          a(href=e.href)=e.text 
+      li
+        a(href="https://logojoy.com/") logo created with logojoy.com
+      li  
+        a(href='./index') Back to Home
+  .emptydiv        
+doctype html
+html(lang="en")
+  head
+    meta(name="description" content="photocredits for the pictures used on the website")
+    meta(charset="utf-8")
+    title Credits
+    style.
+      h1{ text-transform:capitalize;}
+      ul li {font-size: 50px;}
+      .emptydiv {height: 500px;}
+  body
+    -var home=[{href:'https://getbootstrap.com/docs/4.0/components/carousel/',text: 'slider code' },{href:'https://pixabay.com/photos/oysters-delicacy-food-fresh-1209767/',text: 'slider 1' },{href:'https://pixabay.com/photos/whale-shark-shark-aquarium-water-281498/',text: 'slider 2' },{href:' https://pixabay.com/illustrations/fantasy-underwater-u-boat-dolphin-2955419/',text: 'slider 3' },{href:' https://pixabay.com/photos/salmon-dish-food-meal-fish-518032/',text: 'slider 4' }];
+    -var menu=[{href:'https://pixabay.com/photos/fire-grill-flames-heat-barbecue-1868952/',text: 'menu 1:Grill' },{href:'https://pixabay.com/photos/sushi-plateau-kitchen-chinese-2856547/',text: 'menu 2:Sushi' },{href:'https://pixabay.com/photos/caviar-sandwich-fish-appetizer-1695360/',text:"menu3:Caviar"},{href:'https://www.pexels.com/photo/oysters-on-plate-2647936/',text: 'menu4:Platers' },{href:'https://pixabay.com/photos/chef-catering-food-4625935/',text: 'menu5:Chef' }];
+    -var reach= [{href:' https://pixabay.com/photos/phone-booth-telephone-public-phone-203492/',text: 'reach1:' },{href:' https://pixabay.com/photos/greece-ithaca-island-mediterranean-2846878/',text: 'reach2:' },{href:'https://pixabay.com/illustrations/submarine-underwater-boat-technology-1879734/',text: 'reach3:' },{href:'https://pixabay.com/photos/jet-private-gulfstream-g-iii-550167/',text: 'reach4' },{href:'https://pixabay.com/photos/divers-scuba-divers-diving-668777/',text: 'reach5' },  ];
+    -var about= [{href:'https://pixabay.com/photos/entrepreneur-computer-man-office-2326419/',text: 'about1' },{href:'https://unsplash.com/photos/f4pp60bGb7Y ',text: 'about2' }];
+    -var contact=[{href:'https://codepen.io/bobbykorec/pen/qOGbyr',text: 'contact form' },{href:'https://codepen.io/atakan/pen/gqbIz',text: 'reserving a table form ' }];
+    -var license=[{href:'https://pixabay.com/service/license/',text: 'pixabay license' },{href:'https://unsplash.com/license',text: 'unsplash license' },{href:'https://www.pexels.com/license/',text: 'Pexel license' }];
+    +ALinkdiv("home",home)
+    +ALinkdiv("menu",menu) 
+    +ALinkdiv("reach",reach) 
+    +ALinkdiv("about",about) 
+    +ALinkdiv("contact",contact) 
+    +ALinkdiv("license",license) 

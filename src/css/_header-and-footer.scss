@@ -1,0 +1,168 @@
+$primary-color: rgb(26, 43, 72);
+$linkcolor: aliceblue;
+
+@mixin ahover {
+  text-decoration: none;
+
+  @supports (-webkit-background-clip: text) {
+    background: linear-gradient(45deg, rgba(240, 181, 87, 1) 30%, rgba(242, 232, 97, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  @supports not (background-clip: text) {
+    color: rgba(240, 181, 87, 0.441);
+  }
+
+  &:hover {
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    text-emphasis: bold;
+    @supports (background-clip: text) {
+      background: linear-gradient(90deg, rgba(242, 232, 97, 1) 1%, rgba(240, 181, 87, 1) 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @supports not (background-clip: text) {
+      color: rgba(240, 181, 87, 1);
+    }
+  }
+}
+.navbar-brand {
+  margin: 0;
+  margin-left: 100px;
+  justify-content: center;
+}
+footer {
+  background-color: $primary-color;
+  color: $linkcolor;
+  // margin-top: 5%;
+  padding: 10px 0;
+
+  a {
+    color: $linkcolor;
+  }
+  .important {
+    background-color: darken($primary-color, 2%);
+    text-align: center;
+    padding: 1rem 0;
+    p {
+      @include ahover;
+      &:hover {
+        text-transform: unset;
+        cursor: unset;
+        text-decoration: none;
+        text-emphasis: unset;
+      }
+      a {
+        text-decoration: underline !important;
+        text-decoration-color: yellow !important;
+        @include ahover;
+      }
+    }
+  }
+
+  .footernav {
+    display: flex;
+    justify-content: left;
+    margin-left: 25%;
+    margin-left: 10%;
+    a {
+      @include ahover;
+      font-family: $navigationFONT;
+    }
+    h1 {
+      @include ahover;
+      font-family: "Permanent Marker";
+      display: none;
+    }
+
+    h1:hover {
+      text-transform: unset;
+      cursor: unset;
+      text-decoration: none;
+      text-emphasis: unset;
+    }
+    ul {
+      li {
+        margin-left: 30px;
+        text-transform: capitalize;
+      }
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      font-size: large;
+    }
+
+    img {
+      width: 130px;
+      height: 80px;
+    }
+  }
+}
+header {
+  position: absolute;
+  height: 74px;
+  padding-bottom: 7px;
+  background-color: $primary-color;
+  width: 100%;
+  z-index: 5;
+  grid-gap: 0;
+  top: 0;
+  display: flex;
+  .navbar-nav {
+    flex-direction: unset;
+  }
+  nav {
+    width: 100%;
+    > a {
+      width: fit-content;
+    }
+    ul li {
+      text-align: center;
+      display: inline;
+      margin-left: 2.5%;
+      font-family: $navigationFONT;
+      font-size: 26px;
+      color: black;
+      a {
+        @include ahover;
+      }
+      a[href*="login"] {
+        display: none;
+      }
+    }
+  }
+  .navbar-collapse.show {
+    background-color: $primary-color;
+    width: fit-content;
+    top: 50px;
+    position: absolute;
+    right: 0px;
+    ul li a {
+      margin: auto;
+      height: fit-content;
+      width: fit-content;
+      font-size: 1.5rem;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .navbar-expand-xl .navbar-collapse {
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 1200px) {
+  .footernav {
+    img {
+      align-self: center;
+    }
+    ul {
+      margin-left: 10px;
+    }
+  }
+}

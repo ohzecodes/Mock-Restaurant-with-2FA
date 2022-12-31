@@ -1,0 +1,27 @@
+# This  block of code redirects 
+# ll incoming requests to the /htmldocs/ directory.a
+RewriteEngine on
+RewriteRule ^$ /htmldocs/ [L]
+
+
+# This block of code removes the "htmldocs" folder name 
+# from URLs and performs a permanent redirect (301) to the URL 
+# without the folder name.
+RewriteEngine on
+RewriteRule ^htmldocs/(.+)$ /$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.+) /htmldocs/$1 [END]
+
+# The third block of code ensures 
+# that requests for directories do
+#  not include a trailing slash.
+DirectorySlash Off
+
+# This code hides file extensions to the end of the requested URL. 
+Options +MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+

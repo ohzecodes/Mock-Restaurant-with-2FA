@@ -1,0 +1,22 @@
+-    var slides = [  {  src: '../assets/Images/slider/slider1.jpg',  alt: 'First slide',    caption: {      title: 'Not an aquarium, but a restaurant underwater.',      text: 'Our unique and Exclusive dinning experience gives our costumers the amazing oportunity to learn, interact, and dine with fish, sharks and other sea animals.'    }  },  {  src: '../assets/Images/slider/slider2.jpg',  alt: 'Second slide',  caption: {    title: 'A moment that remains',    text: 'Experience can only be imagined !!!'}  },  {  src: '../assets/Images/slider/slider3.jpg',  alt: 'Third slide',  caption: {    title: 'Service Gurantee',    text: 'At the underwater restaurant, diners enjoy a unique experience in the incredible surroundings of a coral reef. From you first sip to your last delicious bite, we promise the food and service will be worth putting down the phone.'  }  },  {  src: '../assets/Images/slider/slider6.jpg',  alt: 'fourth slide',  caption: {title: 'Our best seller',text:"<a href='menu'> menu<a>"}  }  ];
+
+main
+  div#carousel
+    div#carouselIndicators.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        each slide, index in slides
+          li(data-target='#carouselIndicators', data-slide-to=index, class=index === 0 ? 'active' : '')
+      div.carousel-inner
+        each slide, index in slides
+          div.carousel-item(class=index === 0 ? 'active' : '')
+            img.d-block.w-100(src=slide.src, alt=slide.alt)
+            if slide.caption
+              div.carousel-caption.left.center.d-none.d-md-block
+                h4= slide.caption.title
+                p!= [slide.caption.text]
+      a.carousel-control-prev(href='#carouselIndicators' role='button' data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselIndicators' role='button' data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next

@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Permanent+Marker&family=Yeseva+One&display=swap");
+/*
+Font uasage:
+the Permanent marker font is used  of the footer headers `Credits` This is because there is a logo underneath, and it would look unprofessional any other font is used. The logo is of the similiar font.
+the Yeseva One is the Primary font used for the Heading. 
+the Montserrat is the Primary font used for the text. 
+*/
+
+$headingFONT: "Yeseva One", cursive;
+$cursiveFONT: "Montserrat", sans-serif;
+$navigationFONT: $cursiveFONT;
+$assetpath: "../assets/Images/";
+
+#come {
+  font-family: $cursiveFONT;
+}
+
+@function bgimg($where, $name) {
+  @return $assetpath + $where + "/" + $name;
+}
+
+@function menuBgImg($name) {
+  @return url($assetpath + "menupic/" + $name);
+}
+
+@import "menu", "header-and-footer", "contact", "s";
+
+#come {
+  text-align: center;
+}
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+}
+.mr-auto {
+  display: contents;
+  text-align: left;
+}
+
+figure {
+  grid-area: logo;
+  margin: 1em;
+  #logo {
+    width: auto;
+    height: 64px;
+    height: 64px;
+    vertical-align: top;
+    &.with_bg {
+      width: 150px;
+      height: auto;
+      background-color: $primary-color;
+    }
+  }
+
+  figcaption {
+    display: none;
+  }
+}
+@supports ((height: fill-available)) {
+  #logo {
+    height: fill-available;
+  }
+}
+
+#homepagediv {
+  margin-left: 15%;
+  margin-right: 15%;
+  h3 {
+    font-family: $cursiveFONT;
+    font-size: 23px;
+  }
+  h1 {
+    font-family: $headingFONT;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.item img {
+  margin-left: 1.25%;
+  margin-right: 1.25%;
+}
+
+#howto {
+  font-family: $headingFONT;
+  text-align: center;
+}
+
+.about {
+  display: grid;
+  grid-template:
+    "img   h2" 2.5em
+    "img  txt" / 1fr 2fr;
+  grid-gap: 2rem;
+  p {
+    font-family: $cursiveFONT;
+    padding-inline-end: 10%;
+  }
+  img {
+    grid-area: img;
+    margin-bottom: 100px;
+  }
+  h2 {
+    grid-area: h2;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 25px;
+    grid-area: txt;
+    margin-bottom: 50px;
+  }
+  #notallowed {
+    display: block;
+    line-break: auto;
+    font-size: 23px;
+    font-family: $cursiveFONT;
+  }
+  h1,
+  h2 {
+    font-family: $headingFONT;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-top: 0;
+  }
+}
+
+#reach_us {
+  margin-top: 5rem;
+}
+main.top-100 {
+  margin-top: 100px;
+}
+
+/* tablet */
+
+@media (max-width: 1200px) and (min-width: 710px) {
+  figure {
+    position: relative;
+    margin: auto;
+  }
+
+  header {
+    grid-template: "logo" "nav" / 1fr;
+  }
+  .about {
+    grid-template: "img" auto "h2" auto "txt" auto/ 1fr;
+  }
+  // iframe {
+  //   width: 610px;
+  //   margin: auto;
+  // }
+  .about {
+    img {
+      margin-top: 100px;
+      margin-bottom: 0%;
+      width: 50%;
+      margin: auto;
+    }
+    h2,
+    p {
+      margin: auto;
+    }
+    h2 {
+      margin: 0;
+    }
+  }
+}
+
+/* laptop/tablet half-way */
+
+@media (max-width: 1380px) and (min-width: 1111px) {
+  .about p {
+    padding-inline-end: 10%;
+  }
+  .about img {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+/* mobile only */
+
+@media (max-width: 709px) and (min-width: 1px) {
+  * {
+    zoom: 100%;
+  }
+  #reserve {
+    border: none;
+  }
+}
+
+figure {
+  margin: auto;
+  padding: 0;
+}
+nav {
+  overflow: hidden !important;
+}
+
+.about {
+  margin: auto;
+  overflow: hidden;
+  img {
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar-brand {
+    margin: auto;
+  }
+}
+
+#homepage {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+  }
+  .mySlides {
+    display: none;
+  }
+
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .mySlides img {
+    width: 100% !important;
+  }
+  /* Caption text */
+  .text {
+    background: #7171718e;
+    color: #f2f2f2;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+      font-size: 11px;
+    }
+  }
+}
+
+#carousel {
+  max-height: calc(100% - 2px);
+  max-width: fill-available;
+  margin: auto;
+  margin: 0;
+  position: relative;
+}
+.carousel {
+  &.slide {
+    margin: 0;
+  }
+  &-indicators {
+    z-index: 3;
+    li {
+      background-color: white;
+      height: 25px;
+    }
+  }
+  &-control-prev:link &-control-prev:visited {
+    background: white;
+  }
+  &-control-prev:visited {
+    background: black;
+  }
+  &-inner {
+    background: white;
+  }
+  &-caption {
+    background-color: rgba($color: black, $alpha: 0.5);
+    z-index: 2;
+    &.left {
+      left: 0;
+    }
+    &.center {
+      bottom: 15%;
+    }
+    h4 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 20px;
+    }
+    h4,
+    p {
+      padding: 10px;
+      width: fit-content;
+      margin: auto;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+mixin link(where)
+  - const ext=""
+  - const links = [{name: 'Home', href: 'index'+ext},{name: 'Menu', href: 'menu'+ext},{name: 'About', href: 'About'+ext},{name: 'Reach Us', href: 'reach'+ext},{name: 'Contact', href: 'contact'+ext},{name: 'Reserve A Table', href: "contact"+ext+"#ReserveATable", id: 'reserve'},{name: 'login', href: 'auth/login'}];
+    each link in links
+      if where=="header"
+        li.nav-item
+          if link.id
+            a.nav-link(href=link.href id=link.id)= link.name
+          else
+            a.nav-link(href=link.href)= link.name
+      else if where=="footer"
+        li
+          if link.id
+            a(href=link.href id=link.id)= link.name
+          else
+            a(href=link.href)= link.name
+

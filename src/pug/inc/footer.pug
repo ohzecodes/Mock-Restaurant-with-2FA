@@ -1,0 +1,16 @@
+include ./link.pug
+- var creditsLinks = [  { href: './photocredits', text: 'Photocredits' },  { href: './photocredits#license', text: 'License' }];
+
+footer
+  div.footernav
+    img(src='../assets/halflogo.png' width='150' alt='Ercenci')
+    ul
+      +link("footer")
+      each link in creditsLinks
+        li
+          a(href=link.href)= link.text
+  div.important
+    //- p Call 123-X2D-Y0Q1 to reserve a table or
+    //-   a(href='contact#ReserveATable') reserve online
+    p#Credits_to_Author Designed and produced by
+      span#Author  as a project for A Web development class

@@ -1,0 +1,124 @@
+#whattoeat {
+  height: 100vh;
+  background-image: menuBgImg("menuPostEdit.jpg");
+  background-size: cover;
+  #orignalIngredients {
+    display: none;
+  }
+  .con {
+    height: 100%;
+    .food {
+      position: absolute;
+      right: 11%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      table#t1 {
+        background-image: menuBgImg("menu-fore.png");
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: cover;
+        background-size: 520px 600px;
+        width: 500px;
+
+        text-align: center;
+        height: 600px;
+        margin-top: 100px;
+        tbody {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+
+          align-self: center;
+          > * {
+            line-height: 70px;
+            text-align: center;
+            width: fit-content;
+            height: fit-content;
+            margin: 0 auto;
+          }
+        }
+        td[heads="mealp"] {
+          padding: 0;
+        }
+
+        a {
+          color: #f2f2f2;
+          font-size: 30px;
+          font-family: $cursiveFONT;
+        }
+      }
+    }
+    .heading {
+      h2 {
+        // font-size: x-large;
+        margin-left: 200px;
+        font-family: $headingFONT;
+      }
+    }
+  }
+}
+
+.menu {
+  > div {
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+  }
+  height: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  .con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    .heading h2 {
+      font-size: 5rem;
+    }
+  }
+  .food {
+    grid-area: food;
+  }
+  .food ul {
+    padding: 0;
+    li {
+      line-height: 6rem;
+      list-style: none;
+      font-size: 50px;
+      line-height: 4rem;
+      list-style: none;
+      font-size: 30px;
+      font-family: $cursiveFONT;
+      text-align: center;
+      letter-spacing: 5px;
+    }
+  }
+
+  &#grill {
+    background-color: rgb(10, 10, 10);
+  }
+  &#caviar {
+    background-color: rgb(28, 33, 25);
+  }
+  &#sushi {
+    // background: rgb(204, 190, 179);
+    background-color: rgb(204, 190, 179);
+    color: black !important;
+  }
+  &#platters {
+    // background-color: rgb(168, 175, 180);
+    background: darkslategrey;
+  }
+  &#chef {
+    background-color: white;
+    color: black !important;
+  }
+}
+
+.menu h1 {
+  text-align: center;
+  font-family: $headingFONT;
+  letter-spacing: 8px;
+}

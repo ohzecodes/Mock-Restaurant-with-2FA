@@ -1,0 +1,58 @@
+mixin MenuSection(id,name,imgscr, bg)
+  - var img="../assets/Images/menupic/"+imgscr
+  - var result = name ? name : id;
+
+  .menu.px-4.py-5.text-white(id=id)
+    .row.flex-lg-row-reverse.align-items-center.g-5.py-5.container.h-full
+      .col-10.col-sm-8.col-lg-6
+        img.d-block.mx-lg-auto.img-fluid(src=img alt=name  loading='lazy')
+      .col-lg-6
+        h1.display-5.fw-bold.lh-1.mb-3=name 
+        div.food
+          ul
+            li Item One
+            li Item Two
+            li Item Three
+            li Item Four
+
+
+
+
+
+
+doctype html
+html
+  -const scripts=[{src:"../scripts/ajaxMenuFetch.js"}]
+  -const title={t:"restaurant Erkenci", desc:"The world largest underwater restuarant. We are renowned amongst our customers to serve the best seafood in the world. "};
+  include inc/head.pug
+body  
+  include ./inc/header.pug
+  main(style="background-color:black")
+    div#whattoeat.menu
+      div.con
+        div.heading
+          //- h2#orignalIngredients All our ingredients are orignal; Thefore, they can not be shared. If you are allgic to something please let us know.
+        div.food
+          table#t1
+            tr
+              td(heads='mealp')
+                a(href='#grill') Grilled on a volcano rock
+            tr
+              td(heads='mealp')
+                a(href='#sushi') Sushi
+            tr
+              td(heads='mealp')
+                a(href='#caviar') Caviars
+            tr
+              td(heads='mealp')
+                a(href='#platters') Platters
+            tr
+              td(heads='mealp')
+                a(href='#chef') Chef's Choice
+
+    +MenuSection("grill","Grilled on a volcano rock","VolcanicRock.jpg")
+    +MenuSection("sushi","Sushi","sushi.jpg")
+    +MenuSection("caviar","Caviars","caviar.jpg")
+    +MenuSection("platters","Platters","Platters.jpg")
+    +MenuSection("chef","Chef's choice","chef.jpg")
+    include ./inc/footer.pug

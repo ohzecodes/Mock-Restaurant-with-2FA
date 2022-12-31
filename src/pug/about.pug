@@ -1,0 +1,13 @@
+-const items=[{img: '../assets/Images/about/phil.jpg', alt: 'manwithlaptop', h1: 'Our Philosophy', p: 'Costumer statisfaction, experience, and safety is our Number 1 priority. We only catch fish that are not availible in the outer world because We want our customers to experience the unique and rare taste that no one has ever experienced before. All recipes are unique and designed in our kitchen. Our Glass, and the High Tech wave blocking system placed outside the restuarant ensure costumer safety.'}, {img: '../assets/Images/about/enterance.jpg', alt: 'enterance', h1: 'Dinning Experience', p: 'Whether you are teleporting, coming on a private jet, or taking a boat ride, you woiuld be welcomed by our magical yet remarkable enterance. Then you will move to the restuarant using this tunnel. The tunnel and the restuarant has panoramic view, allowing visitors to dine, and roam around while watching thousands of fish swim around them, all without wet feet.'}];
+include ./inc/pictureContent.pug
+doctype html
+html
+  -const title={t:"restaurant Erkenci ",desc:"The world largest underwater restuarant. We are renowned amongst our customers to serve the best seafood in the world. "};
+  include inc/head.pug
+  body
+    include inc/header.pug
+    main.top-100
+      each item in items
+        +pictureContent(item)
+    include inc/footer.pug
+

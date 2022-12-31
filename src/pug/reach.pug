@@ -1,0 +1,30 @@
+- var items= [{img: "../assets/Images/reach/teleport.jpg", alt: "teleport", h1: "Teleport to the restaurant", id: "tp", p: "Walk in to any of the any one of the teleportation booth dial -111 and then your reservation code. This will bring you inside the restaurant. In order to comply with the world's teleportation Laws, the booth will use laser beam to detect if you are eligible to teleport."}, {img: "../assets/Images/reach/boat.jpg", alt: "boat", h1: "On a boat", id: "ct", p: "To ensure safety and authorization, you may be prompted to enter your boat's make, model, and license plate. Our system will detect if you are eligible. Your reservation will not be completed until we ensure that you are eligible. Once your reservation is complete. We will reserve a parking spot for your boat at our enterance facility. Our enterance facility can be found on the <a href='contact'> Contact us</a> page. an elevator will be waiting for you."}, {img: "../assets/Images/reach/submarine.jpg", alt: "submarine", h1: "Submarine for simplicity", id: "uw", p: "The most simple method of transport when it come to under wster transport is a submarine. Dont worry about parking, we have parking availible."}, {img: "../assets/Images/reach/jet.jpg", alt: "private charter ", h1: "Any form of air travel.", id: "jet", p: "A full sized Airport is waiting for your arrival at the enterance facility. The airport supports 100 planes at a time. Our airport is monitored by earlyBird security."}, {img: "../assets/Images/reach/divers.jpg", alt: "scuba", h1: "Scuba Diving", id: "SD", p: "If you are a licensed scuba diver you can use your skills."}];
+include ./inc/pictureContent.pug
+doctype html
+html
+  -const title={t:"restaurant Erkenci ",desc:"The world largest underwater restuarant. We are renowned amongst our customers to serve the best seafood in the world. "};
+  include inc/head.pug
+  body
+    include inc/header.pug
+
+    main.top-100
+      h1#howto How to Reach us?
+      h5#come When you reserve a table, either online or on phone, you will be prompted to describe a method of transport, you may choose the following:
+        br
+        a(href='#tp') Teleport
+        |  ||
+        a(href='#ct') Boat or a Yatch
+        |  ||
+        a(href='#uw') Submarine
+        |  ||
+        a(href='#jet') Airtravel
+        |  ||
+        a(href='#SD') Scuba Diving
+      div#reach_us
+        each item in items
+          +pictureContent(item,"reach")
+
+
+    include inc/footer.pug
+
+
