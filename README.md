@@ -1,35 +1,34 @@
-# Erkenci Restaurant website with PHP 2 Factor Authentication.
+# Mock Restaurant website with PHP 2 Factor Authentication.
 
 ## Overview
 
-This was a final project for the Web Development II Course. The Course covered PHP as a programing language and web development trifecta (HTML,JS,CSS). This project **does not** require to create a two factor authentication. This is a feature that was implemented later.
+This was a final project for the Web Development II Course. This Course covered PHP as a programing language and web development trifecta (HTML,JS,CSS). The project **does not** require to create a two factor authentication. This is a feature that was implemented later.
 
-##### Prerequisites
+### Prerequisites
 
 1. PHP based file hosting that suppports `mail()` function for sending out email.
 2. Have nodejs and npm installed for building the project
 
-##### Purpose
+### Purpose
 
-This project started as a academic project where we were required to code a PHP Application. I used HTML and CSS for the front end initially. Later I discovered Pug and SCSS, So I reconstructed the codebase to use these technologies.
+This project started as a academic project where we were required to code a PHP Application. I used HTML and CSS for the front end initially. Later I discovered _Pug (for writing clean HTML)_ and SCSS , So I reconstructed the codebase to use these technologies.
 The class was given about a month to complete this project.
 
-##### Scope
+### Scope
 
-The following items are in scope for this build:
+The following items are in scope for this build files:
 
-1. Adding, viewing, updating, and deleting Menu item
-2. Viewing, and Deleting Messages
-3. Viewing, and Deleting reservations
-4. Two Factor Authentication
+- Adding, viewing, updating, and deleting Menu item
+- Viewing, and Deleting Messages
+- Viewing, and Deleting reservations
+- Two Factor Authentication
 
 The Following items are out of scope for this build:
 
-1. The ability to add and remove users.
-2. The ability to check if the user is a person or a bot.
-3. The abilty to accept payments.
+- The ability to add and remove users.
+- The ability to accept payments.
 
-##### This project demonstrates
+### This project demonstrates
 
 - My technical skillset
 - My Abilty to write clean code
