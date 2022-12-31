@@ -14,7 +14,14 @@ This was a final project for the Web Development II Course. This Course covered 
 This project started as a academic project where we were required to code a PHP Application. I used HTML and CSS for the front end initially. Later I discovered _Pug (for writing clean HTML)_ and SCSS , So I reconstructed the codebase to use these technologies.
 The class was given about a month to complete this project.
 
-### Scope
+### This project demonstrates
+
+- My technical skillset
+- My Abilty to write clean code
+- My Interest in Web Development
+- Performing continual upgrades to add tech
+
+## Scope
 
 The following items are in scope for this build files:
 
@@ -28,12 +35,7 @@ The Following items are out of scope for this build:
 - The ability to add and remove users.
 - The ability to accept payments.
 
-### This project demonstrates
 
-- My technical skillset
-- My Abilty to write clean code
-- My Interest in Web Development
-- Performing continual upgrades to add tech
 
 ## Usage
 
