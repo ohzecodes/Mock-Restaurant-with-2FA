@@ -2,12 +2,13 @@
 
 ## Overview
 
-This was a final project for the Web Development II Course. This Course covered PHP as a programing language and web development trifecta (HTML,JS,CSS). The project **does not** require to create a two factor authentication. This is a feature that was implemented later.
+This project is for a restaurant that is underwater, Customers can use the restaurant by airplane, ship, or Teleporting.
+This was a final project for the Web Development II Course. This Course covered PHP as a programing language and web development trifecta (HTML,JS,CSS). Even though this project **did not** require to create a two factor authentication, I did it anyways.
 
 ### Prerequisites
 
-1. PHP based file hosting that suppports `mail()` function for sending out email.
-2. Have nodejs and npm installed for building the project
+1. PHP based file hosting that suppports `mail()` function used for 2FA.
+2. Have nodejs and npm installed for building the project.
 
 ### Purpose
 
