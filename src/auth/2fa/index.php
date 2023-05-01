@@ -9,6 +9,7 @@
         
         function random($min, $max)
     {
+
         // code stay on server for 60s
         $interval = 60 * 2;
         srand(floor(time() / $interval));
@@ -19,7 +20,7 @@
 
           $code = random(10000, 99999);
             $_SESSION["code"]=$code;  
-            unset( $code );
+          unset($code);
           mail($myemail, "Your Code", "Your Code is". $_SESSION["code"]);
         
         
@@ -53,13 +54,18 @@ a.btn.btn-success::after{
     </style>
 
 
-  </head>
+  </head> 
   <body>
-      
+<?php echo $pass?>
   <form method="post" action="">
       <a class="btn toHome" href="../login.php">back to login</a>
     <label for="userinput"> Please enter your code here </label>
-    <input type="input" id="userinput" />
+    <input type="password" id="userinput" value="<?php
+    
+      if(trim(getenv('DISABLE_2FA')) ==="true")  {
+        echo ($_SESSION["code"]);
+      }
+      ?>" />
     <input type="button" value="submit" id="but" class="btn btn-primary" />
     <div id="response"></div>
   </form>
@@ -100,11 +106,7 @@ a.btn.btn-success::after{
   </script>
 </body>
 </html>
-<head>
 
-
-
-</head>
 
 <?php
 } else {

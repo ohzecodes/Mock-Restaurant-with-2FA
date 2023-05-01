@@ -3,7 +3,7 @@
   echo $_SESSION["loggedin2"];
   if (($_SESSION["loggedin"] && $_SESSION["loggedin2"])) {
       include_once "../connect.php";
-      $link = mysqli_connect($host, $user, $pass, $db_name);
+      $link = mysqli_connect($host, $user, $pass, $db_name , $port);
 
       ?>
     <!DOCTYPE html>

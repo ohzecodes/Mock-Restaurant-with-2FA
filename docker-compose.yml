@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  webpack:
+    image: node:14-alpine
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      - ./postcss.config.js:/app/postcss.config.js
+      - ./package-lock.json:/app/package-lock.json
+      - ./webpack.config.js:/app/webpack.config.js
+      - ./public:/app/public
+    working_dir: /app
+    command: >
+      sh -c "npm install && npm run build"
+  php:
+    build:
+      context: dockerfiles
+      dockerfile: php.dockerfile
+    volumes:
+      - ./public:/var/www/html
+    ports:
+      - "80:80"
+    depends_on:
+      - webpack
+      - mysql
+    environment:
+      DB_NAME: ErkenciRestaurant
+      DB_USER: root
+      DB_PASS: toor
+      DB_HOST: mysql
+      Db_PORT: 3306 
+      ADMIN_PANEL_USER_NAME: admin
+      ADMIN_PANEL_PASSWORD: nimda
+      DISABLE_2FA: TRUE # Just keep the 2fa disabled, it will give you the 2FA screen but with a prefilled text 
+      EMAIL_FOR_TWO_FA: ''  # note that we dont have a mail server here, that why we disabled the two FA
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'ErkenciRestaurant'
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: toor
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./ErkenciRestaurant.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./mysql-data:/var/lib/mysql
+
+
+
+# http://localhost/htdocs/index.html

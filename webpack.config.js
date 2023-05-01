@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const htmlDocs=path.resolve( __dirname, "public","htdocs");
 
 module.exports = {
   entry: {
@@ -59,7 +60,7 @@ module.exports = {
         },
         {
           from: path.resolve(__dirname, "src", "auth"),
-          to: path.resolve(__dirname, "public", "htmldocs", "auth"),
+          to: path.resolve(  htmlDocs, "auth"),
         },
         {
           from: path.resolve(__dirname, "src/assets"),
@@ -69,35 +70,33 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "/src/pug/index.pug"),
-      filename: path.resolve(__dirname, "public/htmldocs/", "index.html"),
+      filename: path.resolve(  htmlDocs, "index.html"),
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "/src/pug/menu.pug"),
-      filename: path.resolve(__dirname, "public", "htmldocs", "menu.html"),
+      filename: path.resolve(  htmlDocs, "menu.html"),
       minify: true,
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "/src/pug/about.pug"),
-      filename: path.resolve(__dirname, "public", "htmldocs", "About.html"),
+      filename: path.resolve(  htmlDocs, "About.html"),
       minify: true,
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "/src/pug/reach.pug"),
-      filename: path.resolve(__dirname, "public", "htmldocs", "reach.html"),
+      filename: path.resolve(  htmlDocs, "reach.html"),
       minify: true,
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "/src/pug/contact.pug"),
-      filename: path.resolve(__dirname, "public", "htmldocs", "contact.html"),
+      filename: path.resolve(  htmlDocs, "contact.html"),
       minify: true,
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "/src/pug/photocredits.pug"),
       filename: path.resolve(
-        __dirname,
-        "public",
-        "htmldocs",
+       htmlDocs,
         "photocredits.html"
       ),
       minify: true,

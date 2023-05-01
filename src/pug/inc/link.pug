@@ -1,6 +1,7 @@
 mixin link(where)
-  - const ext=""
-  - const links = [{name: 'Home', href: 'index'+ext},{name: 'Menu', href: 'menu'+ext},{name: 'About', href: 'About'+ext},{name: 'Reach Us', href: 'reach'+ext},{name: 'Contact', href: 'contact'+ext},{name: 'Reserve A Table', href: "contact"+ext+"#ReserveATable", id: 'reserve'},{name: 'login', href: 'auth/login'}];
+  - const ext=".html"
+  - const php=".php"
+  - const links = [{name: 'Home', href: 'index'+ext},{name: 'Menu', href: 'menu'+ext},{name: 'About', href: 'About'+ext},{name: 'Reach Us', href: 'reach'+ext},{name: 'Contact', href: 'contact'+ext},{name: 'Reserve A Table', href: "contact"+ext+"#ReserveATable", id: 'reserve'},{name: 'login', href: 'auth/login'+php}];
     each link in links
       if where=="header"
         li.nav-item

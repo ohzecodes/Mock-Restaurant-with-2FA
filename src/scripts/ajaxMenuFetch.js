@@ -14,7 +14,7 @@ AjaxGet = function (url) {
   }).responseText;
   return result;
 };
-const r = JSON.parse(AjaxGet("../htmldocs/auth/menu.php"));
+const r = JSON.parse(AjaxGet("../htdocs/auth/menu.php"));
 console.log(r.Grill);
 $(document).ready(function () {
   var grillF = $.map(r.grill, function (x) {
