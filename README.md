@@ -7,7 +7,7 @@ This was a final project for the Web Development II Course. This Course covered 
 
 ### Prerequisites
 
-1. Docker Desktop (for the non docker version please refer the previous commit)
+1. Docker Desktop (for the non docker version please refer the previous commit the one before docker added)
 ### Purpose
 
 This project started as a academic project where we were required to code a PHP Application. I used HTML and CSS for the front end initially. Later I discovered _Pug (for writing clean HTML)_ and SCSS , So I reconstructed the codebase to use these technologies.
