@@ -15,8 +15,7 @@ services:
       sh -c "npm install && npm run build"
   php:
     build:
-      context: ./dockerfiles
-      dockerfile: php.dockerfile
+      dockerfile: ./dockerfiles/php.dockerfile
     volumes:
       - ./public:/var/www/html
     ports:
